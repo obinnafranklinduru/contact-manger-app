@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build": "node server.js",
     "watch": "nodemon server.js",
     "test": "jest --detectOpenHandles",
     "test-watch": "jest --watch",
