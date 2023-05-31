@@ -10,7 +10,7 @@
     "test": "jest --detectOpenHandles",
     "test-watch": "jest --watch",
     "pm2-start": "pm2 start server.js --name contact-manger-app --watch --instances max",
-    "pm2-deploy": "pm2 start server.js --name contact-manger-app --watch --env production --instances max", 
+    "pm2-deploy": "pm2 start server.js --name contact-manger-app --watch --env production --instances max",
     "pm2-stop": "pm2 stop server.js",
     "pm2-restart": "pm2 restart server.js",
     "pm2-delete": "pm2 delete server.js"
