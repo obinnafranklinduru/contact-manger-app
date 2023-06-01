@@ -63,6 +63,18 @@ const {
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/UserMultipleResponse'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 userRouter.get('/', httpGetUsers);
 
@@ -87,6 +99,18 @@ userRouter.get('/', httpGetUsers);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/UserSingleResponse'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 userRouter.get('/:id', authToken, httpGetUserByID);
 
@@ -109,6 +133,18 @@ userRouter.get('/:id', authToken, httpGetUserByID);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ResponseMessage'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 userRouter.put('/', authToken, httpUpdateUser);
 
@@ -126,6 +162,18 @@ userRouter.put('/', authToken, httpUpdateUser);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ResponseMessage'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 userRouter.delete('/', authToken, httpDeleteUser);
 

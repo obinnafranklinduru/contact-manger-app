@@ -67,6 +67,17 @@ const {
  *         accessToken:
  *           type: string
  *           description: Access token for authentication
+ * 
+ *     ErrorResponse:
+ *       type: object
+ *       properties:
+ *         success:
+ *           type: boolean
+ *           description: Indicates if there was an error.
+ *           default: false
+ *         message:
+ *           type: string
+ *           description: The error message
  *
  */
 
@@ -89,6 +100,18 @@ const {
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ResponseMessage'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 authRouter.post('/register', httpRegisterUser);
 
@@ -112,6 +135,18 @@ authRouter.post('/register', httpRegisterUser);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/LoginResponse'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 authRouter.post('/login', httpLoginUser);
 
@@ -131,6 +166,18 @@ authRouter.post('/login', httpLoginUser);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ResponseMessage'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 authRouter.get('/logout', authToken, httpLogoutUser);
 

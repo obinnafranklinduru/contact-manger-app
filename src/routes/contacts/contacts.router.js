@@ -69,6 +69,18 @@ const {
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ContactMultipleResponse'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 contactRouter.get('/', authToken, httpGetAllContacts);
 
@@ -95,6 +107,18 @@ contactRouter.get('/', authToken, httpGetAllContacts);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ContactSingleResponse'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 contactRouter.get('/:id', authToken, httpGetContactByID);
 
@@ -120,6 +144,18 @@ contactRouter.get('/:id', authToken, httpGetContactByID);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ResponseMessage'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 contactRouter.post('/', authToken, httpCreateContact);
 
@@ -152,6 +188,18 @@ contactRouter.post('/', authToken, httpCreateContact);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ResponseMessage'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 contactRouter.put('/:id', authToken, httpUpdateContactByID);
 
@@ -177,6 +225,18 @@ contactRouter.put('/:id', authToken, httpUpdateContactByID);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ResponseMessage'
+ *       400:
+ *         description: Bad request
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
  */
 contactRouter.delete('/:id', authToken, httpDeleteContactByID);
 

@@ -8,7 +8,7 @@ const server = http.createServer(app)
 
 const startServer = async () => {
     try {
-        await mongooseConnect();
+        //await mongooseConnect();
 
         server.on('error', (error) => {
             throw new Error(error.message);
