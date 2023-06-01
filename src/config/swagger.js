@@ -7,7 +7,10 @@ const swaggerOptions = {
       version: '1.0.0',
       description: 'This is a Contact Manager API built with Node.js that demonstrates CRUD operations on a database and utilizes JSON Web Tokens (JWT) for user authentication.',
     },
-    servers: [ 
+    servers: [
+      {
+        url: 'https://contact-manger-api.onrender.com/',
+      },
       {
         url: 'http://localhost:5000',
       }
