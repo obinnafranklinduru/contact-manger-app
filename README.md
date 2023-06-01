@@ -1,4 +1,4 @@
-# Contact Manager Node.js API
+# Contact Manager API
 
 This is a Contact Manager API built with Node.js that demonstrates CRUD operations on a database and utilizes JSON Web Tokens (JWT) for user authentication. It provides endpoints for creating, reading, updating, and deleting users and contacts.
 

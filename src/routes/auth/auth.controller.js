@@ -8,7 +8,7 @@ const ErrorResponse  = require('../../utils/error.response')
 
 /**
  * @desc Register a new user.
- * @route POST /api/auth/register
+ * @route POST /v1/auth/register
  * @access Public
  *
  * @param {Object} req - The request object.
@@ -35,7 +35,7 @@ async function httpRegisterUser(req, res, next) {
 
 /**
  * @desc Login a user.
- * @route POST /api/auth/login
+ * @route POST /v1/auth/login
  * @access Public
  * 
  * @param {Object} req - The request object.
@@ -89,7 +89,7 @@ async function httpLoginUser(req, res, next) {
 
 /**
  * @desc Logout a user.
- * @route GET /api/auth/logout
+ * @route GET /v1/auth/logout
  * @access Private
  *
  * @param {Object} req - The request object.

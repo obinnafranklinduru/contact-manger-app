@@ -1,6 +1,6 @@
 const http = require('http');
-const app = require('./src/app');
-const { mongooseConnect } = require('./src/utils/mongoose');
+const app = require('./app');
+const { mongooseConnect } = require('./config/mongoose');
 
 const PORT = process.env.PORT || 5000;
 

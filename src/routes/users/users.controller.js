@@ -6,7 +6,7 @@ const ErrorResponse  = require('../../utils/error.response')
 
 /**
  * @desc Get all users.
- * @route GET /api/users
+ * @route GET /v1/users
  * @access Public
  *
  * @param {Object} req - The request object.
@@ -32,7 +32,7 @@ async function httpGetUsers(req, res, next) {
 
 /**
  * @desc Get a user by ID
- * @route GET /api/users/:id
+ * @route GET /v1/users/:id
  * @access Private
  *
  * @param {Object} req - The request object.
@@ -63,7 +63,7 @@ async function httpGetUserByID(req, res, next) {
 
 /**
  * @desc Update a user.
- * @route PUT /api/users
+ * @route PUT /v1/users
  * @access Private
  *
  * @param {Object} req - The request object.
@@ -119,7 +119,7 @@ async function httpUpdateUser(req, res, next) {
 
 /**
  * @desc Delete a user.
- * @route DELETE /api/users
+ * @route DELETE /v1/users
  * @access Private
  *
  * @param {Object} req - The request object.

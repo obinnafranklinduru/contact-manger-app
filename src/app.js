@@ -4,24 +4,19 @@ const helmet = require('helmet');
 const hpp = require('hpp');
 const mongoSanitize = require('express-mongo-sanitize');
 const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 const xss = require("xss-clean");
 
+const apiV1 = require('./routes/api.v1')
 const handleError = require('./middlewares/error');
-const authRouter = require('./routes/auth/auth.router');
-const contactRouter = require('./routes/contacts/contacts.router');
-const userRouter = require('./routes/users/users.router');
-
-const limiter = rateLimit({
-	windowMs: 15 * 60 * 1000, // 15 minutes
-	max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
-	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-})
+const limiter = require('./config/rate.limit');
+const swaggerOptions = require('./config/swagger')
 
 require('dotenv').config();
 
 const app = express();
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
 // Security configuration
 app.use(helmet()); // adds security headers
@@ -39,10 +34,18 @@ app.use(express.json());
 app.use(morgan('combined'));
 
 // Routes configuration
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs',
+  swaggerUi.setup(swaggerSpec, {
+    swaggerOptions: {
+      docExpansion: 'none',
+      defaultModelsExpandDepth: -1,
+    },
+  })
+);
+
 app.get('/', (req, res) => res.status(200).json({ message: 'Welcome... Contact Manager API!' }));
-app.use('/api/auth', authRouter);
-app.use('/api/contacts', contactRouter);
-app.use('/api/users', userRouter);
+app.use('/v1', apiV1);
 
 // Error handling middleware
 app.use(handleError);

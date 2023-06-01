@@ -6,7 +6,7 @@ const Contact = require('../../models/contacts.model')
 
 /**
  * @desc Create a new contact.
- * @route POST /api/contacts
+ * @route POST /v1/contacts
  * @access Private
  * 
  * @param {Object} req - The request object.
@@ -33,7 +33,7 @@ async function httpCreateContact(req, res, next) {
 
 /**
  * @desc Get all contacts.
- * @route GET /api/contacts
+ * @route GET /v1/contacts
  * @access Private
  * 
  * @param {Object} req - The request object.
@@ -58,7 +58,7 @@ async function httpGetAllContacts(req, res, next) {
 
 /**
  * @desc Get a contact.
- * @route GET /api/contacts/:id
+ * @route GET /v1/contacts/:id
  * @access Private
  * 
  * @param {Object} req - The request object.
@@ -84,7 +84,7 @@ async function httpGetContactByID(req, res, next) {
 
 /**
  * @desc Update a contact.
- * @route PUT /api/contacts/:id
+ * @route PUT /v1/contacts/:id
  * @access Private
  * 
  * @param {Object} req - The request object.
@@ -131,7 +131,7 @@ async function httpUpdateContactByID(req, res, next) {
 
 /**
  * @desc Delete a contact.
- * @route DELETE /api/contacts/:id
+ * @route DELETE /v1/contacts/:id
  * @access Private
  * 
  * @param {Object} req - The request object.
